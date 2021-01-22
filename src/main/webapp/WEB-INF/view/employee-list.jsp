@@ -32,6 +32,12 @@
 
 </table>
 
+<br>
+
+<input type="button"
+        value="Add employee"
+        onclick="window.location.href = 'add_new_employee'">
+
 </body>
 
 </html>
