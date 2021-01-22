@@ -18,16 +18,29 @@
         <th>Email</th>
         <th>Department</th>
         <th>Salary</th>
+        <th>Operations</th>
     </tr>
 
     <c:forEach var="emp" items="${allEmps}">
+
+        <c:url var="updButton" value="/update_employee">
+            <c:param name="empId" value="${emp.employeeId}"/>
+        </c:url>
+
         <tr>
             <td>${emp.employeeName}</td>
             <td>${emp.employeeSurname}</td>
             <td>${emp.employeeEmail}</td>
             <td>${emp.employeeDepartment}</td>
             <td>${emp.employeeSalary}</td>
+
+            <td>
+                <input type="button"
+                        value="Update"
+                        onclick="window.location.href = '${updButton}'"/>
+            </td>
         </tr>
+
     </c:forEach>
 
 </table>

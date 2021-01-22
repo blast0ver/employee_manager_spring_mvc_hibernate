@@ -12,7 +12,9 @@
 
 <br>
 
-<form:form action="save_employee" modelAttribute="newEmp">
+<form:form action="save_employee" modelAttribute="emp">
+
+    <form:hidden path="employeeId"/>
 
     <table>
 
@@ -43,6 +45,8 @@
     </table>
 
 </form:form>
+
+<a href="employees">Back</a>
 
 </body>
 
