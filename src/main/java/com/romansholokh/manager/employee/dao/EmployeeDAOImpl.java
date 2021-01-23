@@ -3,6 +3,7 @@ package com.romansholokh.manager.employee.dao;
 import com.romansholokh.manager.employee.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -42,5 +43,18 @@ public class EmployeeDAOImpl implements EmployeeDAO
         Employee employee = session.get(Employee.class, employeeId);
 
         return employee;
+    }
+
+    @Override
+    public void deleteEmployee(int employeeId)
+    {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query<Employee> query = session.createQuery("delete from Employee " +
+                "where employeeId =: empId");
+
+        query.setParameter("empId", employeeId);
+
+        query.executeUpdate();
     }
 }

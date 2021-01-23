@@ -11,4 +11,6 @@ public interface EmployeeDAO
     public void saveOrUpdateEmployee(Employee employee);
 
     public Employee getEmployee(int employeeId);
+
+    public void deleteEmployee(int employeeId);
 }
